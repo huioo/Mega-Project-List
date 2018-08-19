@@ -2,6 +2,8 @@
 """
  Enter a number and have the program generate the Fibonacci sequence to that number or to the Nth number.
 
+斐波那契数列
+
  referer:
  https://github.com/MrBlaise/learnpython/blob/master/Numbers/fibonacci.py
 """
