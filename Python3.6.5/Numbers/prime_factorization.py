@@ -10,6 +10,8 @@
  ** Todo : 完善
  https://github.com/whoshuu/Projects/blob/master/Numbers/prime.py
 """
+import math
+
 from random import randint
 from fractions import gcd
 
@@ -40,7 +42,10 @@ def prime_factors(num):
         https://en.wikipedia.org/wiki/Factorization
     :return:
     """
-    return [i for i in range(2, round((num+1)/2)) if 0 == num % i]
+    start = 2
+    # end = math.ceil(num/2)  特殊情况4，会算错
+    end = num//2 + 1
+    return [i for i in range(start, end) if 0 == num % i]
     
 
 def prime_factors_ver1(num):
