@@ -25,6 +25,7 @@ def compare(a, b):
 
 
 def merge(seq1, seq2):
+    """ 合并2个有序的序列 """
     ret = []
     while seq1 and seq2:
         if seq1[0] > seq2[0]:
@@ -32,7 +33,7 @@ def merge(seq1, seq2):
         else:
             ret.append(seq1.pop(0))
     else:
-        # 最后2个数组会出现一个为空数组，一个有一个值且值为最大
+        # 最后一个数组为空,
         ret.extend(seq1)
         ret.extend(seq2)
 
@@ -48,6 +49,7 @@ def merge_sort(iterable):
     # 二路归并排序里面有两个Sort，多路归并排序里面写多个Sort就可以了
     left_l = merge_sort(iterable[:mid])
     right_l = merge_sort(iterable[mid:])
+    # 分解到最后左右2个列表都只有一个元素，合并之后且有序；然后递归向上合并，即2个有序的列表合并。
     ret = merge(left_l, right_l)
     
     # print(left_l, right_l, ret)
